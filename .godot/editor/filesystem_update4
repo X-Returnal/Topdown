@@ -1,0 +1,23 @@
+res://scenes/bullet.tscn
+res://sprites/walls.tres
+res://scripts/bullet.gd
+res://scripts/player.gd
+res://scripts/map_load.gd
+res://scenes/emeny_spawner.tscn
+res://scenes/end_screen.tscn
+res://scenes/lvl_0.tscn
+res://scenes/lvl_1.tscn
+res://scenes/lvl_2.tscn
+res://scenes/lvl_3.tscn
+res://scenes/lvl_4.tscn
+res://scenes/lvl_5.tscn
+res://scenes/mage.tscn
+res://scenes/main_menu.tscn
+res://scenes/player.tscn
+res://scenes/pwr_mage.tscn
+res://scenes/slime.tscn
+res://scenes/test_map.tscn
+res://scenes/ui.tscn
+res://scripts/global.gd
+res://scripts/emeny spawner.gd
+res://default_bus_layout.tres

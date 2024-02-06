@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://rqratvomnvcl"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_a6xo0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udycb"]
+
+[node name="ui" type="Node2D"]
+script = ExtResource("1_a6xo0")
+
+[node name="Time" type="Label" parent="."]
+offset_top = 24.0
+offset_right = 46.0
+offset_bottom = 47.0
+text = "50000"
+
+[node name="Time2" type="Label" parent="."]
+offset_right = 46.0
+offset_bottom = 23.0
+text = "Time"
+
+[node name="Time3" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 302.0
+offset_bottom = 55.0
+text = "Health"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 512.0
+offset_right = 552.0
+offset_bottom = 23.0
+text = "0"
+
+[node name="LevelScore" type="Label" parent="."]
+offset_left = 512.0
+offset_top = 40.0
+offset_right = 552.0
+offset_bottom = 63.0
+text = "0"
+
+[node name="health" type="ProgressBar" parent="."]
+offset_left = 112.0
+offset_right = 456.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_udycb")
+max_value = 3.0
+show_percentage = false
+
+[node name="Chalenge" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 308.0
+offset_bottom = 343.0
+text = "Health"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfhjdld0hlnhc"]
+
+[ext_resource type="Script" path="res://scripts/mobbing.gd" id="1_fcgf5"]
+[ext_resource type="Texture2D" uid="uid://cp8tsg3jmnnl1" path="res://sprites/pwr_mage_orb.png" id="2_kccck"]
+[ext_resource type="Texture2D" uid="uid://dw1h5q4cfplq5" path="res://sprites/powwer.png" id="3_kcnkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4df0t"]
+size = Vector2(16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guxmh"]
+
+[node name="pwr_mage" type="CharacterBody2D"]
+script = ExtResource("1_fcgf5")
+speed = 75.0
+fear_factor = 120
+mob_value = 2
+has_weapon = true
+progress_speed = 30.0
+projectile_image = ExtResource("2_kccck")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_kcnkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4df0t")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_guxmh")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

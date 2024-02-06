@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0irwmggmruw3"]
+
+[ext_resource type="Script" path="res://scripts/emeny spawner.gd" id="1_23b8x"]
+[ext_resource type="PackedScene" uid="uid://b73iqfjsi6xsw" path="res://scenes/slime.tscn" id="2_rwhjh"]
+[ext_resource type="Texture2D" uid="uid://c736yw4wxl26y" path="res://sprites/spawner.png" id="3_5tomp"]
+[ext_resource type="AudioStream" uid="uid://b8o35njyscvsd" path="res://sfx/hit.wav" id="4_eydwi"]
+[ext_resource type="AudioStream" uid="uid://ovo8exejdn3" path="res://sfx/spawn.wav" id="5_jkyrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1wji"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_23b8x")
+unit_spawn = ExtResource("2_rwhjh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g1wji")
+debug_color = Color(0.760784, 0.176471, 1, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_5tomp")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 16.0
+show_percentage = false
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eydwi")
+
+[node name="spawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jkyrh")
+volume_db = -5.0

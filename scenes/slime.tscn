@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b73iqfjsi6xsw"]
+
+[ext_resource type="Script" path="res://scripts/mobbing.gd" id="1_lf18g"]
+[ext_resource type="Texture2D" uid="uid://tjda8kql3u6l" path="res://sprites/slimeboi.png" id="2_2i5s8"]
+[ext_resource type="AudioStream" uid="uid://b8o35njyscvsd" path="res://sfx/hit.wav" id="3_vx8oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4df0t"]
+size = Vector2(16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00ewe"]
+size = Vector2(20, 16)
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_lf18g")
+health = 1.5
+mob_value = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2i5s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4df0t")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_00ewe")
+debug_color = Color(1, 0.0117647, 0.0156863, 0.419608)
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vx8oa")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
